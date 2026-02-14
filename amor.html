@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Ti ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff4e50, #fc913a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    color: white;
+    animation: fadeIn 3s ease-in-out;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+p {
+    font-size: 1.3em;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 1em;
+    border: none;
+    border-radius: 30px;
+    background-color: white;
+    color: #ff4e50;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ffe0e0;
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Corazones animados */
+.heart {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    animation: float 5s infinite ease-in;
+}
+
+@keyframes float {
+    from { transform: translateY(100vh); opacity: 1; }
+    to { transform: translateY(-10vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Feliz Día del Amor y la Amistad ❤️</h1>
+    <p>
+        Desde que comenzamos a hablar, algo cambió en mí.
+        Lo que empezó como una simple conversación,
+        se convirtió en algo que no puedo dejar de sentir.
+        Aunque estés en Perú y yo aquí,
+        mi corazón encontró el camino hacia ti.
+    </p>
+
+    <button onclick="mostrarMensaje()">Haz clic aquí 💌</button>
+</div>
+
+<script>
+function mostrarMensaje() {
+    alert("Gracias por aparecer en mi vida. No importa la distancia, lo que siento por ti es real ❤️");
+}
+
+/* Generar corazones */
+function crearCorazon() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 10 + "px";
+    heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(crearCorazon, 300);
+</script>
+
+</body>
+</html>
